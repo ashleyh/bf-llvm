@@ -36,5 +36,11 @@ case "$1" in
     vagrant up
     vagrant ssh -c '$HOME/project/build.sh --vagrant-guest'
     ;;
+  *)
+    echo "Note: just trying to use the clang++ and llvm-config binaries on PATH"
+    export CLANG="clang++"
+    export LLVM_CONFIG="llvm-config"
+    compile
+    ;;
 esac
 
